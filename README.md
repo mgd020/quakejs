@@ -7,6 +7,8 @@
 
 ## Setup
 
-1.  Run `docker-compose up`
+1.  Ensure ports 80 and 27960 are open
 
-2.  Navigate to `127.0.0.1`
+2.  Run `docker-compose up`
+
+3.  Navigate to `127.0.0.1` (for local) or dedicated server IP.
