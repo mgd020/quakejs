@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  server:
+    build:
+      context: .
+      target: server
+    ports:
+      - 27960:27960
+    volumes:
+      - ./base:/srv/base
+      - ./server.cfg:/srv/base/baseq3/server.cfg:ro
+
+  web:
+    build:
+      context: .
+      target: web
+    ports:
+      - 8080:8080
