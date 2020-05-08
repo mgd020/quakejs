@@ -20,7 +20,7 @@
 wget -qO- https://get.docker.com/ | sh
 
 # set up docker-compose
-printf '#!/bin/sh\n\ndocker run --rm -it -v "$PWD:$PWD" -v "/var/run/docker.sock:/var/run/docker.sock" -w "$PWD" $@\n' > /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
+printf '#!/bin/sh\n\ndocker run --rm -it -v "$PWD:$PWD" -v "/var/run/docker.sock:/var/run/docker.sock" -w "$PWD" docker/compose $@\n' | sudo tee -a /usr/local/bin/docker-compose >/dev/null && sudo chmod +x /usr/local/bin/docker-compose
 
 # pull down code
 git clone https://github.com/mgd020/quakejs.git
